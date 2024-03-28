@@ -15,9 +15,9 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism"
       >
         <label>
-          <spam className="font-satoshi font-semibold text-base text-gray-700">
+          <span className="font-satoshi font-semibold text-base text-gray-700">
             Your AI Promt
-          </spam>
+          </span>
 
           <textarea
             value={post.prompt}
@@ -29,10 +29,10 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         </label>
 
         <label>
-          <spam className="font-satoshi font-semibold text-base text-gray-700">
+          <span className="font-satoshi font-semibold text-base text-gray-700">
             Tag{`      `}
-            <spam className="font-normal">(#product, #idea)</spam>
-          </spam>
+            <span className="font-normal">(#product, #idea)</span>
+          </span>
 
           <textarea
             value={post.tag}

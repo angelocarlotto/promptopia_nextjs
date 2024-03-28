@@ -14,7 +14,6 @@ const Nav = () => {
   useEffect(() => {
     (async () => {
       const response = await getProviders();
-      console.log(response);
       setProviders(response);
     })();
   }, []);
@@ -119,7 +118,7 @@ const Nav = () => {
                 <button
                   type="button"
                   key={provider.name}
-                  onClick={() => singIn(provider.id)}
+                  onClick={() => signIn(provider.id)}
                   className="black_btn"
                 >
                   Sign In
