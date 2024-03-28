@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
- // experimental: {
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
  //   appDir: true,
  //   serverComponentsExternalPackages: ["mongoose"],
- // },
+  },
   images: {
     remotePatterns: [
       {
