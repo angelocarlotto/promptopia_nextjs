@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+
 import PromptCard from "./PromptCard";
 
 const PromptCardList = ({ data, handleTagClick }) => {
@@ -17,17 +18,20 @@ const PromptCardList = ({ data, handleTagClick }) => {
 };
 const Feed = () => {
   const [searchText, setSearchText] = useState("");
-  const [posts, setPosts] = useState([]);
+  const [allPosts, setAllPosts] = useState([]);
   const handleSearchChange = (e) => {};
 
+  const fetchPost = async () => {
+    const response = await fetch("/api/prompt", { cache: "no-store" });
+    const data = await response.json();
+
+    setAllPosts(data);
+  };
+
   useEffect(() => {
-    const fetchPost = async () => {
-      const response = await fetch("/api/prompt");
-      const data = await response.json();
-      setPosts(data);
-    };
     fetchPost();
   }, []);
+
   return (
     <section className="feed">
       <form className="relative w-full flex-center">
@@ -40,7 +44,7 @@ const Feed = () => {
         ></input>
       </form>
 
-      <PromptCardList data={posts} handleTagClick={() => {}} />
+      <PromptCardList data={allPosts} handleTagClick={() => {}} />
     </section>
   );
 };

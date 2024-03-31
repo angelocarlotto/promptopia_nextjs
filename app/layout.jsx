@@ -19,7 +19,7 @@ const RootLayout = ({ children }) => {
             <Nav />
             {children}
           </main>
-          <footer>Create by: Angelo Carlotto at 28, marc of 2024. Toronto, Canada</footer>
+          <footer>Create by: Angelo Carlotto at 28, march of 2024. Toronto, Canada</footer>
         </Provider>
       </body>
     </html>
