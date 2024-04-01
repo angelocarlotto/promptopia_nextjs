@@ -15,6 +15,9 @@ const UserSchema = new Schema({
       "Username invalid, it should contain 8-20 alphanumeric letters and be unique!",
     ],
   },
+  fullName: {
+    type: String,
+  },
   image: {
     type: String,
   },
